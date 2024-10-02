@@ -9,10 +9,27 @@
 
 
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
 
+.navigation a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
 
 .buyingCard {
     padding: 25px 15px 15px 15px;
     width: 290px;
     height: 290px;
+}
+
+.headImg {
+    background-image: url(img/backgroundimg.png);
+    object-fit: cover;
+    height: 850px;
 }
