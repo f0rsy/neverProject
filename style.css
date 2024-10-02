@@ -30,6 +30,37 @@ nav {
 
 .headImg {
     background-image: url(img/backgroundimg.png);
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headImgBlock {
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 128px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container h2 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container .ip {
+    font-size: 36px;
+    color: #356EFF;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    width: 550px;
 }
