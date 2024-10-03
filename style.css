@@ -90,7 +90,7 @@ nav {
 
 
 
-
+/* 
 .buyingCard {
     position: relative;
     width: 290px;
@@ -103,14 +103,12 @@ nav {
     margin: 0 auto;
 }
 
-/* Фоновое изображение */
 .buyingCard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Название привилегии */
 .buyingCard .name {
     position: absolute;
     top: 15px;
@@ -120,7 +118,6 @@ nav {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Цена и кнопка внизу */
 .buyingCard .price {
     position: absolute;
     bottom: 20px;
@@ -159,4 +156,89 @@ nav {
 
 .col-md-3 {
     padding: 0;
+} */
+
+
+
+
+
+.buyingCard {
+    position: relative;
+    width: 290px;
+    height: 290px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px; /* Отступ между карточками */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Фоновое изображение */
+.buyingCard img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Название привилегии */
+.buyingCard .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Цена и кнопка внизу */
+.buyingCard .price {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #356EFF;
+    color: white;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    width: 90px;
+    height: 40px;
+}
+
+.buyingCard .buy {
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: white;
+    border: none;
+    color: #356EFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+}
+
+/* Стиль для блоков с тенями */
+.block-container {
+    padding: 30px; /* Отступы от границ блоков */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Для заголовков разделов */
+h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стиль сетки карточек */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками */
+    justify-content: center;
 }
