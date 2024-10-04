@@ -1,9 +1,19 @@
+@font-face {
+    font-family: Gilroy-SemiBold;
+    src: url(/fonts/Gilroy-SemiBold.ttf);
+}
 
+@font-face {
+    font-family: Gilroy-Regular;
+    src: url(/fonts/Gilroy-Regular.ttf);
+}
+
+
+body {
+    font-family: Gilroy-Regular;
+}
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px 0;
 }
 
@@ -11,14 +21,14 @@ nav {
     text-decoration: none;
     color: black;
     margin-left: 20px;
+    font-size: 24px;
 }
+
 
 .headImg {
     background-image: url(img/backgroundimg.png);
-    background-size: cover;
     background-position: center;
-    height: 100vh;
-    max-height: 954px;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,12 +44,14 @@ nav {
     font-size: 128px;
     color: white;
     margin-bottom: 10px;
+    font-family: Gilroy-SemiBold;
 }
 
 .container h2 {
     font-size: 48px;
     color: white;
     margin-bottom: 20px;
+    font-family: Gilroy-SemiBold;
 }
 
 .container .ip {
@@ -67,6 +79,7 @@ nav {
     color: #fff;
     font-size: 36px; 
     margin-bottom: 10px;
+    font-family: Gilroy-SemiBold;
 }
 
 .info p {
@@ -102,14 +115,15 @@ nav {
 .buyingCard .name {
     font-size: 28px;
     color: #fff;
+    font-family: Gilroy-SemiBold;
 }
 
 .buyingCard .action {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin-top: auto;
+    align-items: flex-end;
 }
 
 .buyingCard .price {
@@ -123,6 +137,7 @@ nav {
     justify-content: center;
     width: 90px;
     height: 40px;
+    font-family: Gilroy-SemiBold;
 }
 
 .buyingCard .buy {
@@ -155,6 +170,7 @@ nav {
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
+    font-family: Gilroy-SemiBold;
 }
 
 .cards-grid {
@@ -197,25 +213,6 @@ form {
     display: flex;
     flex-direction: column;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .modal {
     display: none;
@@ -283,24 +280,27 @@ form {
   .buy {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
   }
   
   .buy a {
-    border: 1px solid #4a1473;
-    border-radius: 10px;
-    width: 302px;
-    height: 50px;
-    padding: 8px 0px;
+    padding: 3px 0px;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
-    color: #4a1473;
     text-decoration: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 44px;
+    color: #fff;
+    background-color: #356EFF;
   }
   
   #serverTitle {
     font-size: 28px;
-    color: #000000;
+    text-align: center;
+    color: #202020;
   }
   
   #serverDescription {
@@ -319,16 +319,175 @@ form {
     padding: 20px;
   }
 
+.formToDonate {
+    border: 2px solid #356eff;
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    color: rgba(32, 32, 32, 0.5);
+}
+
+.formToDonate:focus {
+    outline: none;
+    border-color: #356eff; 
+    color: #000;
+}
+
+.formToDonate:active {
+    color: #000;
+}
+
+.priceBlock p {
+    margin: 0;
+    font-size: 16px;
+    color: rgba(32, 32, 32, 0.5);
+    height: 12px;
+}
 
 
+#price {
+    font-size: 32px;
+    color: #202020;
+    height: 45px;
+    font-family: Gilroy-SemiBold;
+}
+
+.nameOfproduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h2Name {
+    display: flex;
+}
+
+.h2Name h2{
+    font-family: Gilroy-SemiBold;
+}
+
+#nameOfBuying {
+    margin-left: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #202020;
+}
+
+.change {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.changeInputs {
+    width: 40%;
+}
+
+.kollCase {
+    flex-direction: column;
+}
 
 
+@media (max-width: 992px) {
+  
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      margin: 1%;
+      width: 98%;
+      height: 90%;
+    }
+  
+    .left-block {
+      width: 90%;
+      height: 100%;
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .right-block {
+      width: auto;
+      height: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .close {
+      position: absolute;
+      top: 5px;
+      color: #666666;
+      font-size: 30px;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    #serverTitle {
+      font-size: 40px;
+    }
 
+    .container .ip {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    .container h1 {
+        font-size: 55px;
+        color: white;
+        margin-bottom: 10px;
+        font-family: Gilroy-SemiBold;
+    }
+    
+    .container h2 {
+        font-size: 28px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: Gilroy-SemiBold;
+    }
 
+    .info h4 {
+        color: #fff;
+        font-size: 26px; 
+        margin-bottom: 10px;
+        font-family: Gilroy-SemiBold;
+    }
+    
+    .info p {
+        color: #fff;
+        font-size: 18px; 
+        width: auto; 
+        text-align: justify;
+        margin: 0; 
+    }
 
+    .cards-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
 
-
-
+    .headImgBlock {
+        padding: auto;
+    }
+  }
+  
 
 
 

@@ -14,18 +14,26 @@
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="logo">
-                    <img src="img/logo.png" alt="">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo.png" alt="Logo">
+                    </a>
                 </div>
-                <div class="navigation">
-                    <a href="#privilege">Привилегии</a>
-                    <a href="#case">Кейсы</a>
-                    <a href="#money">Монеты и Незеры</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navigation navbar-nav ms-auto">
+                        <a class="nav-link" href="#privilege">Привилегии</a>
+                        <a class="nav-link" href="#case">Кейсы</a>
+                        <a class="nav-link" href="#money">Монеты и Незеры</a>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
+    
     <main>
         <div class="headImg">
             <div class="headImgBlock">
@@ -40,10 +48,10 @@
             <div class="info">
                 <h4>Информация</h4>
                 <p>Со всеми командами и дополнительными возможностями привилегий, <br>
-                    вы можете узнать зайдя на наш сервер и прописав команду - /donate</p>
+                    вы можете узнать зайдя на наш сервер и прописав команду - <strong>/donate</strong> </p>
             </div>
             <div class="block-container">
-                <h4>Привилегии</h4>
+                <h4 id="privilege">Привилегии</h4>
                 <div class="cards-grid">
                     <div class="buyingCard" style="background-image: url('img/gerzog.png');">
                         <p class="name">Герцог</p>
@@ -119,7 +127,7 @@
             </div>
             
             <div class="block-container">
-                <h4>Кейсы</h4>
+                <h4 id="case">Кейсы</h4>
                 <div class="cards-grid">
                     <div class="buyingCard" style="background-image: url('img/prevelegeCase.png');">
                         <div class="headerCard">
@@ -166,7 +174,7 @@
                     <div class="buyingCard" style="background-image: url('img/tituleCase.png');">
                         <div class="headerCard">
                             <p class="name">Титулы</p>
-                            <select class="form">
+                            <select class="form" id="form">
                                 <option>1</option>
                                 <option>5</option>
                                 <option>25</option>
@@ -181,7 +189,7 @@
             </div>
             
             <div class="block-container">
-                <h4>Монеты и Незеры</h4>
+                <h4 id="money">Монеты и Незеры</h4>
                 <div class="cards-grid">
                     <div class="buyingCard" style="background-image: url('img/coins.png');">
                         <p class="name">Монеты</p>
@@ -216,15 +224,39 @@
     <div id="serverModal" class="modal">
         <div class="modal-content">
             <div class="left-block">
-                <h2>Покупка привилегии</h2>
-                <h3 id="serverTitle"></h3>
+                <div class="nameOfproduct">
+                    <div class="h2Name">
+                        <h2>Покупка </h2>
+                        <h2 id="nameOfBuying">привилегии</h2>
+                    </div>
+                    <h3 id="serverTitle"></h3>
+                </div>
                 <form action="">
                     <label for="serv">Выберите сервер</label>
-                    <select name="serv" id="servers" aria-placeholder="Выберите сервер"></select>
+                    <select class="formToDonate" name="serv" id="servers" aria-placeholder="Выберите сервер">
+                        <option value="disable">Выберите сервер</option>
+                    </select>
                     <label for="nik">Ваш ник</label>
-                    <input type="text" name="nik" placeholder="Ваш ник">
+                    <input class="formToDonate" type="text" name="nik" placeholder="Ваш ник">
                     <label for="nik">Адрес электронной почты</label>
-                    <input type="text" name="nik" placeholder="Адрес электронной почты">
+                    <input class="formToDonate" type="text" name="nik" placeholder="Адрес электронной почты">
+                    <div class="kollCase">
+                        <label for="koll">Введите колличество кейсов</label>
+                        <input class="formToDonate" name="koll" id="koll" placeholder="Введите колличество">
+                    </div>
+                    <div class="change">
+                        <div class="changeInputs">
+                            <label for="nik">Будет получено Неверов</label>
+                            <input class="formToDonate" type="text" name="nik" placeholder="Введите кол-во Неверов">
+                        </div>
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:20px">
+                            <path d="M16 10H3.996V12L0 9L3.996 6V8H16V10ZM0 4H12V6L16 3L12 0V2H0V4Z" fill="#356EFF" />
+                        </svg>
+                        <div class="changeInputs">
+                            <label for="nik">Будет заплачено р.</label>
+                            <input class="formToDonate" type="text" name="nik" placeholder="Введите кол-во р.">
+                        </div>
+                    </div>
                 </form>
                 <div class="buy">
                     <div class="priceBlock">

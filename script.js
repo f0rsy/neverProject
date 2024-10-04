@@ -1,120 +1,137 @@
 const servers = [
-    // информация про сервера
-        {
-            title: 'Герцог',
-            images: ['img/titan.png'],
-            price: ['39р']
-        },
-        {
-            // title: 'IC2 Chill',
-            // description: 'Скоро открытие!',
-            // images: ['server2_image1.jpg', 'server2_image2.jpg', 'server2_image3.jpg']
-        }
-    ];
-    
-    let currentServer = 0;
-    let currentImage = 0;
-    
-    document.querySelectorAll('.open-server-modal').forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            currentServer = parseInt(button.getAttribute('data-server-id'));
-            loadServer(currentServer);
-            document.getElementById('serverModal').style.display = 'block';
-        });
-    });
-    
-    document.getElementById('closeModal').onclick = function () {
-        document.getElementById('serverModal').style.display = 'none';
+    {
+        title: 'Герцог',
+        images: ['img/gerzogBig.png'],
+        price: ['39р']
+    },
+    {
+        title: 'Князь',
+        images: ['img/knyazBig.png'],
+        price: ['49р']
+    },
+    {
+        title: 'Принц',
+        images: ['img/prinzBig.png'],
+        price: ['129р']
+    },
+    {
+        title: 'Титан',
+        images: ['img/titanBig.png'],
+        price: ['249р']
+    },
+    {
+        title: 'Элита',
+        images: ['img/eliteBig.png'],
+        price: ['349р']
+    },
+    {
+        title: 'Глава',
+        images: ['img/glavaBig.png'],
+        price: ['549р']
+    },
+    {
+        title: 'Сквид',
+        images: ['img/squidBig.png'],
+        price: ['879р']
+    },
+    {
+        title: 'Аспид',
+        images: ['img/aspidBig.png'],
+        price: ['1299р']
+    },
+    {
+        title: 'Герой',
+        images: ['img/heroBig.png'],
+        price: ['1799р']
+    },
+    {
+        title: 'Страж',
+        images: ['img/strazhBig.png'],
+        price: ['2799р']
+    },
+    {
+        title: 'Привилегии',
+        images: ['img/prevelegeCaseBig.png'],
+        price: ['50р']
+    },
+    {
+        title: 'Монеты',
+        images: ['img/coinsCaseBig.png'],
+        price: ['50р']
+    },
+    {
+        title: 'Незеры',
+        images: ['img/nezersCaseBig.png'],
+        price: ['50р']
+    },
+    {
+        title: 'Титулы',
+        images: ['img/tituleCaseBig.png'],
+        price: ['50р']
+    },
+    {
+        title: 'Монеты',
+        images: ['img/coinsBig.png'],
+        price: ['1р']
+    },
+    {
+        title: 'Незеры',
+        images: ['img/nezersBig.png'],
+        price: ['1р']
     }
-    
-    // document.getElementById('prevServer').onclick = function () {
-    //     currentServer = (currentServer === 0) ? servers.length - 1 : currentServer - 1;
-    //     currentImage = 0;
-    //     loadServer(currentServer);
-    // }
-    
-    // document.getElementById('nextServer').onclick = function () {
-    //     currentServer = (currentServer === servers.length - 1) ? 0 : currentServer + 1;
-    //     currentImage = 0;
-    //     loadServer(currentServer);
-    // }
-    
-    function loadServer(serverIndex) {
-        document.getElementById('serverTitle').textContent = servers[serverIndex].title;
-        document.getElementById('price').textContent = servers[serverIndex].price;
-        loadGalleryImage(0);
-    }
-    function loadGalleryImage(imageIndex) {
-        document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
+];
+
+let currentServer = 0;
+let currentImage = 0;
+
+function loadServer(serverIndex) {
+    document.getElementById('serverTitle').textContent = servers[serverIndex].title;
+    document.getElementById('price').textContent = servers[serverIndex].price;
+    loadGalleryImage(0);
+
+    // Проверяем, какой сервер выбран, и показываем или скрываем блок с классом "change"
+    const changeBlock = document.querySelector('.change');
+    if (servers[serverIndex].title === 'Монеты' && servers[serverIndex].price[0] === '1р' ||
+        servers[serverIndex].title === 'Незеры' && servers[serverIndex].price[0] === '1р') {
+        changeBlock.style.display = 'flex';
+    } else {
+        changeBlock.style.display = 'none';
     }
 
-    
-    // document.getElementById('prevImage').onclick = function () {
-    //     const images = servers[currentServer].images;
-    //     currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
-    
-    //     loadGalleryImage(currentImage);
-    
-    //     loadMultipleGalleryImages(currentImage);
-    // }
-    
-    // document.getElementById('nextImage').onclick = function () {
-    //     const images = servers[currentServer].images;
-    //     currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
-    
-    //     loadGalleryImage(currentImage);
-    
-    //     loadMultipleGalleryImages(currentImage);
-    // }
-    
-    // function setupThumbnailClicks() {
-    //     document.querySelectorAll('.galleryImage').forEach((img, index) => {
-    //         img.onclick = function () {
-    //             const clickedIndex = (currentImage + index - 1 + servers[currentServer].images.length) % servers[currentServer].images.length;
-    
-    //             currentImage = clickedIndex; 
-    
-    //             loadGalleryImage(currentImage);
-    
-    //             loadMultipleGalleryImages(currentImage);
-    //         };
-    //     });
-    // }
-    
-    // function loadGalleryImage(imageIndex) {
-    //     document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
-    // }
-    
-    // function loadMultipleGalleryImages(imageIndex) {
-    //     const images = servers[currentServer].images;
-    
-    //     const prevIndex = (imageIndex === 0) ? images.length - 1 : imageIndex - 1;
-    //     const nextIndex = (imageIndex === images.length - 1) ? 0 : imageIndex + 1;
-    
-    //     document.getElementById('galleryImage1').src = images[prevIndex];
-    //     document.getElementById('galleryImage2').src = images[imageIndex]; 
-    //     document.getElementById('galleryImage3').src = images[nextIndex]; 
-    
-    //     setupThumbnailClicks();
-    // }
-    
-    // document.getElementById('prevImage').onclick = function () {
-    //     const images = servers[currentServer].images;
-    //     currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
-    
-    //     loadGalleryImage(currentImage);
-    
-    //     loadMultipleGalleryImages(currentImage);
-    // }
-    
-    // document.getElementById('nextImage').onclick = function () {
-    //     const images = servers[currentServer].images;
-    //     currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
-    
-    //     loadGalleryImage(currentImage);
-    
-    //     loadMultipleGalleryImages(currentImage);
-    // }
-    
-    // loadMultipleGalleryImages(currentImage);
+    // Проверяем, какой сервер выбран, и показываем или скрываем блок с классом "kollCase"
+    const kollCaseBlock = document.querySelector('.kollCase');
+    if (servers[serverIndex].title === 'Привилегии' && servers[serverIndex].price[0] === '50р' ||
+        servers[serverIndex].title === 'Монеты' && servers[serverIndex].price[0] === '50р' ||
+        servers[serverIndex].title === 'Незеры' && servers[serverIndex].price[0] === '50р' ||
+        servers[serverIndex].title === 'Титулы' && servers[serverIndex].price[0] === '50р') {
+        kollCaseBlock.style.display = 'flex';
+    } else {
+        kollCaseBlock.style.display = 'none';
+    }
+
+    // Синхронизация значения селектора карточки с инпутом "koll"
+    document.querySelectorAll('.buyingCard select').forEach(selectElement => {
+        selectElement.addEventListener('change', function () {
+            if (selectElement.closest('.buyingCard').querySelector('.open-server-modal').getAttribute('data-server-id') == serverIndex) {
+                document.getElementById('koll').value = selectElement.value;
+            }
+        });
+    });
+}
+
+document.querySelectorAll('.open-server-modal').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+        currentServer = parseInt(button.getAttribute('data-server-id'));
+        loadServer(currentServer);
+        document.getElementById('serverModal').style.display = 'block';
+    });
+});
+
+document.getElementById('closeModal').onclick = function () {
+    document.getElementById('serverModal').style.display = 'none';
+}
+
+function loadGalleryImage(imageIndex) {
+    document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
+}
