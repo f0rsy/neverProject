@@ -56,63 +56,63 @@
                         <p class="name">Князь</p>
                         <div class="action">
                             <div class="price">49р</div>
-                            <button class="buy">Купить</button>
+                             <a href="#" class="open-server-modal buy" data-server-id="1">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/prinz.png');">
                         <p class="name">Принц</p>
                         <div class="action">
                             <div class="price">129р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="2">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/titan.png');">
                         <p class="name">Титан</p>
                         <div class="action">
                             <div class="price">249р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="3">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/elite.png');">
                         <p class="name">Элита</p>
                         <div class="action">
                             <div class="price">349р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="4">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/glava.png');">
                         <p class="name">Глава</p>
                         <div class="action">
                             <div class="price">549р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="5">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/squid.png');">
                         <p class="name">Сквид</p>
                         <div class="action">
                             <div class="price">879р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="6">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/aspid.png');">
                         <p class="name">Аспид</p>
                         <div class="action">
                             <div class="price">1299р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="7">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/hero.png');">
                         <p class="name">Герой</p>
                         <div class="action">
                             <div class="price">1799р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="8">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/strazh.png');">
                         <p class="name">Страж</p>
                         <div class="action">
                             <div class="price">2799р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="9">Купить</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                         </div>
                         <div class="action">
                             <div class="price">50р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="10">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/coinsCase.png');">
@@ -146,7 +146,7 @@
                         </div>
                         <div class="action">
                             <div class="price">50р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="11">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/nezersCase.png');">
@@ -160,7 +160,7 @@
                         </div>
                         <div class="action">
                             <div class="price">50р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="12">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/tituleCase.png');">
@@ -174,7 +174,7 @@
                         </div>
                         <div class="action">
                             <div class="price">50р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="13">Купить</a>
                         </div>
                     </div>
                 </div>
@@ -187,14 +187,14 @@
                         <p class="name">Монеты</p>
                         <div class="action">
                             <div class="price">1р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="14">Купить</a>
                         </div>
                     </div>
                     <div class="buyingCard" style="background-image: url('img/nezers.png');">
                         <p class="name">Незеры</p>
                         <div class="action">
                             <div class="price">1р</div>
-                            <button class="buy">Купить</button>
+                            <a href="#" class="open-server-modal buy" data-server-id="15">Купить</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +218,14 @@
             <div class="left-block">
                 <h2>Покупка привилегии</h2>
                 <h3 id="serverTitle"></h3>
-                <p id="serverDescription"></p>
+                <form action="">
+                    <label for="serv">Выберите сервер</label>
+                    <select name="serv" id="servers" aria-placeholder="Выберите сервер"></select>
+                    <label for="nik">Ваш ник</label>
+                    <input type="text" name="nik" placeholder="Ваш ник">
+                    <label for="nik">Адрес электронной почты</label>
+                    <input type="text" name="nik" placeholder="Адрес электронной почты">
+                </form>
                 <div class="buy">
                     <div class="priceBlock">
                         <p>Итоговая цена</p>

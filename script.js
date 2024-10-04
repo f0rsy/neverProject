@@ -2,7 +2,6 @@ const servers = [
     // информация про сервера
         {
             title: 'Герцог',
-            description: 'Добро пожаловать на IC2 Chill — индустриальный сервер, где технологии встречаются с атмосферой уюта! Погрузитесь в мир Industrial Craft 2, где вы сможете экспериментировать с механикой, создавать сложные машины и автоматизированные системы. Наше сообщество — это теплый и отзывчивый коллектив игроков, готовых делиться опытом и помогать друг другу в обучении. Присоединяйтесь к IC2 Chill и станьте частью нашего дружелюбного сообщества. Здесь всегда рады новым лицам, и ваше путешествие станет незабываемым!',
             images: ['img/titan.png'],
             price: ['39р']
         },
@@ -43,91 +42,79 @@ const servers = [
     
     function loadServer(serverIndex) {
         document.getElementById('serverTitle').textContent = servers[serverIndex].title;
-        document.getElementById('serverDescription').textContent = servers[serverIndex].description;
         document.getElementById('price').textContent = servers[serverIndex].price;
         loadGalleryImage(0);
     }
     function loadGalleryImage(imageIndex) {
         document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
     }
+
     
-    function loadMultipleGalleryImages(imageIndex) {
-        const images = servers[currentServer].images;
+    // document.getElementById('prevImage').onclick = function () {
+    //     const images = servers[currentServer].images;
+    //     currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
     
-        const prevIndex = (imageIndex === 0) ? images.length - 1 : imageIndex - 1;
-        const nextIndex = (imageIndex === images.length - 1) ? 0 : imageIndex + 1;
+    //     loadGalleryImage(currentImage);
     
-        // Обновляем изображения
-        document.getElementById('galleryImage1').src = images[prevIndex]; 
-        document.getElementById('galleryImage2').src = images[imageIndex];
-        document.getElementById('galleryImage3').src = images[nextIndex]; 
-    }
+    //     loadMultipleGalleryImages(currentImage);
+    // }
     
-    document.getElementById('prevImage').onclick = function () {
-        const images = servers[currentServer].images;
-        currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
+    // document.getElementById('nextImage').onclick = function () {
+    //     const images = servers[currentServer].images;
+    //     currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
     
-        loadGalleryImage(currentImage);
+    //     loadGalleryImage(currentImage);
     
-        loadMultipleGalleryImages(currentImage);
-    }
+    //     loadMultipleGalleryImages(currentImage);
+    // }
     
-    document.getElementById('nextImage').onclick = function () {
-        const images = servers[currentServer].images;
-        currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
+    // function setupThumbnailClicks() {
+    //     document.querySelectorAll('.galleryImage').forEach((img, index) => {
+    //         img.onclick = function () {
+    //             const clickedIndex = (currentImage + index - 1 + servers[currentServer].images.length) % servers[currentServer].images.length;
     
-        loadGalleryImage(currentImage);
+    //             currentImage = clickedIndex; 
     
-        loadMultipleGalleryImages(currentImage);
-    }
+    //             loadGalleryImage(currentImage);
     
-    function setupThumbnailClicks() {
-        document.querySelectorAll('.galleryImage').forEach((img, index) => {
-            img.onclick = function () {
-                const clickedIndex = (currentImage + index - 1 + servers[currentServer].images.length) % servers[currentServer].images.length;
+    //             loadMultipleGalleryImages(currentImage);
+    //         };
+    //     });
+    // }
     
-                currentImage = clickedIndex; 
+    // function loadGalleryImage(imageIndex) {
+    //     document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
+    // }
     
-                loadGalleryImage(currentImage);
+    // function loadMultipleGalleryImages(imageIndex) {
+    //     const images = servers[currentServer].images;
     
-                loadMultipleGalleryImages(currentImage);
-            };
-        });
-    }
+    //     const prevIndex = (imageIndex === 0) ? images.length - 1 : imageIndex - 1;
+    //     const nextIndex = (imageIndex === images.length - 1) ? 0 : imageIndex + 1;
     
-    function loadGalleryImage(imageIndex) {
-        document.getElementById('galleryImage').src = servers[currentServer].images[imageIndex];
-    }
+    //     document.getElementById('galleryImage1').src = images[prevIndex];
+    //     document.getElementById('galleryImage2').src = images[imageIndex]; 
+    //     document.getElementById('galleryImage3').src = images[nextIndex]; 
     
-    function loadMultipleGalleryImages(imageIndex) {
-        const images = servers[currentServer].images;
+    //     setupThumbnailClicks();
+    // }
     
-        const prevIndex = (imageIndex === 0) ? images.length - 1 : imageIndex - 1;
-        const nextIndex = (imageIndex === images.length - 1) ? 0 : imageIndex + 1;
+    // document.getElementById('prevImage').onclick = function () {
+    //     const images = servers[currentServer].images;
+    //     currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
     
-        document.getElementById('galleryImage1').src = images[prevIndex];
-        document.getElementById('galleryImage2').src = images[imageIndex]; 
-        document.getElementById('galleryImage3').src = images[nextIndex]; 
+    //     loadGalleryImage(currentImage);
     
-        setupThumbnailClicks();
-    }
+    //     loadMultipleGalleryImages(currentImage);
+    // }
     
-    document.getElementById('prevImage').onclick = function () {
-        const images = servers[currentServer].images;
-        currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
+    // document.getElementById('nextImage').onclick = function () {
+    //     const images = servers[currentServer].images;
+    //     currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
     
-        loadGalleryImage(currentImage);
+    //     loadGalleryImage(currentImage);
     
-        loadMultipleGalleryImages(currentImage);
-    }
+    //     loadMultipleGalleryImages(currentImage);
+    // }
     
-    document.getElementById('nextImage').onclick = function () {
-        const images = servers[currentServer].images;
-        currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
-    
-        loadGalleryImage(currentImage);
-    
-        loadMultipleGalleryImages(currentImage);
-    }
-    
-    loadMultipleGalleryImages(currentImage);
+    // loadMultipleGalleryImages(currentImage);
