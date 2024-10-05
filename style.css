@@ -407,7 +407,7 @@ svg {
     .modal-content {
       display: flex;
       flex-direction: column;
-      margin: 0%;
+      margin:  3px;
       width: 98%;
       height: 99%;
     }
